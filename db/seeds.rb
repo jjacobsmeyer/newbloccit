@@ -17,6 +17,16 @@ posts = Post.all
   )
 end
 
+Post.find_or_create_by(
+  title: "I love hockey",
+  body: "Hockey is the best sport in the world!"
+)
+
+Comment.find_or_create_by(
+  body: "What in the world has happened!"
+)
+
+
 puts "Seed finished"
 puts "#{Post.count} posts created"
 puts "#{Comment.count} comments created"
