@@ -20,7 +20,16 @@
   </div>
 
   <h2>Posts</h2>
+  <%= posts_exists? %>
   <%= render @user.posts %>
 
   <h2>Comments</h2>
+  <%= comments_exists? %>
   <%= render @user.comments %>
+  <h2>Favorites</h2>
+  <% @posts.each do |post| %>
+    <%= render partial: 'votes/voter', locals: { post: post } %>
+    <%= link_to post.title, topic_post_path(post.topic, post) %>
+    <%= image_tag current_user.avatar_url(48), class: "gravatar" %>
+    <%= post.comments.count %> Comments
+  <% end %>
