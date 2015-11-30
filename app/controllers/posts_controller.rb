@@ -12,6 +12,7 @@ class PostsController < ApplicationController
     @post = Post.new
   end
 
+
   def create
     @topic = Topic.find(params[:topic_id])
     @post = @topic.posts.build(post_params)
