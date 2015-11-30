@@ -33,5 +33,10 @@ class Post < ActiveRecord::Base
     update_attribute(:rank, new_rank)
   end
 
+  def as_json(options={})
+    super(methods: [:comments])
+  end
+
+
 
 end
