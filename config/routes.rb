@@ -20,6 +20,8 @@ Rails.application.routes.draw do
 
   get 'about' => 'welcome#about'
 
+  get 'welcome/contact'
+  
   root to: 'welcome#index'
 
   namespace :api do
